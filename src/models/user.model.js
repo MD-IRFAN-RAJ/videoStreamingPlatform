@@ -65,6 +65,7 @@ userSchema.pre('save', async function(next) {
     next();
 })
 
+// 🔐 Add methods for password check and tokens
 userSchema.methods.isPasswordCorrect = async function(password) {
     return await bcrypt.compare(password, this.password);
 }
